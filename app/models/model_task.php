@@ -89,8 +89,7 @@ class Model_task extends Model{
     /*------------------------------==Update  status Task==----------------------------------*/
     function update__status_task($ideTask){
       Global $db;
-      $query = $db->query("UPDATE task SET status:status WHERE ideTas='$ideTask' ");
-      $query -> bindParam(':status', 2);
+      $query = $db->prepare("UPDATE task SET status=2 WHERE ideTas=:ideTask ");
       $query -> bindParam(':ideTask', $ideTask);
       $query->execute();
     }
